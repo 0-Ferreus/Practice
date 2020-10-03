@@ -1,13 +1,14 @@
-//Problem 1:I cant declare start at the start
-//Problem 2:Because i cant declare start at first so of i choose other number instead of 1 and 2 the program disfuctions.
 #include <stdio.h>
 
 int main() {
-//here: if i declare start here the bottom int doesnt get defined
   int c,o;
+  start:
   printf("Do you wanna do a decimal operation or a whole number operation?\n");
   printf("Type 1 for decimal operation and 2 for whole number operation:");
   scanf("%d",&c);
+  /*Need to somehow add this
+  if(c!=1||2)
+  {goto start;}*/
   again:
   printf("1=Addition\t2=Subtraction\t3=Multiplication\t4=division");
   printf("\nEnter the respective number of the operation you want to perform:");
@@ -75,7 +76,7 @@ int main() {
     
     case 4:
       div=a/b;
-      printf("a divided by b is %.2f",div);
+      printf("The first number divided by the second number is %.2f",div);
       break;
 
     default:
@@ -86,8 +87,15 @@ int main() {
   }
   else{
      printf("LOL Its 1 or 2 not other numbers. Choose again\n");
-    goto again;
+    goto start;
   }
+  int l;
+  printf("\nDo you want to do more operations?\nType 1 for yes and 2 for no:\n");
+  scanf("%d", &l);
+  if(l==1)
+  {goto start;}
+  else
+  {printf("Thank you for using the program :)");}
 
   return 0;
 }
