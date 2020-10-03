@@ -1,0 +1,93 @@
+//Problem 1:I cant declare start at the start
+//Problem 2:Because i cant declare start at first so of i choose other number instead of 1 and 2 the program disfuctions.
+#include <stdio.h>
+
+int main() {
+//here: if i declare start here the bottom int doesnt get defined
+  int c,o;
+  printf("Do you wanna do a decimal operation or a whole number operation?\n");
+  printf("Type 1 for decimal operation and 2 for whole number operation:");
+  scanf("%d",&c);
+  again:
+  printf("1=Addition\t2=Subtraction\t3=Multiplication\t4=division");
+  printf("\nEnter the respective number of the operation you want to perform:");
+  scanf("%d",&o);
+
+  if(c==1)
+  {
+    int a,b,sum,sub,mul,div;
+    printf("Enter the first number:");
+    scanf("%d",&a);
+    printf("Enter the second number:");
+    scanf("%d",&b);
+    
+    switch(o)
+    {
+    case 1:
+      sum=a+b;
+      printf("The sum of the two input numbers is %d",sum);
+      break;
+
+    case 2:
+      sub=a-b;
+      printf("The difference of the two input numbers is %d",sub);
+      break;
+    
+    case 3:
+      mul=a*b;
+      printf("The product of the two input numbers is %d",mul);
+      break;
+    
+    case 4:
+      div=a/b;
+      printf("a divided by b is %d",div);
+      break;
+
+    default:
+      printf("lol type the right number stupid\n");
+      goto again;
+      break;
+
+    }
+  }
+  else if(c==2){
+    float a,b,sum,sub,mul,div;
+    printf("Enter the first number:");
+    scanf("%f",&a);
+    printf("Enter the second number:");
+    scanf("%f",&b);
+    
+    switch(o){
+    case 1:
+      sum=a+b;
+      printf("The sum of the two input numbers is %.2f",sum);
+      break;
+
+    case 2:
+      sub=a-b;
+      printf("The difference of the two input numbers is %.2f",sub);
+      break;
+    
+    case 3:
+      mul=a*b;
+      printf("The product of the two input numbers is %.2f",mul);
+      break;
+    
+    case 4:
+      div=a/b;
+      printf("a divided by b is %.2f",div);
+      break;
+
+    default:
+      printf("lol type the right number stupid\n");
+      goto again;
+      break;
+    }
+  }
+  else{
+     printf("LOL Its 1 or 2 not other numbers. Choose again\n");
+    goto again;
+  }
+
+  return 0;
+}
