@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+int main()
+{
+  int pos,choice,re;
+  char* EngMnth[13]={"","January", "February", "March","April","May","June","July","August","September","October","November","December"};
+  char* NepMnth[13]={"","Baisakh","Jestha","Ashar","Shrawan","Bhadra","Ashoj/Ashwin","Kartik","Mangsir","Poush","Magh","Falgun","Chaitra"};
+
+  start:
+  printf("\n1=English\t\t\t 2=Nepali\n");
+  printf("Choose language:");
+  scanf("%d",&choice);
+
+  if((choice==1) || (choice==2))
+      {
+      again:
+      printf("\nEnter the position of the month:");
+      scanf("%d",&pos);
+      if (pos>12)
+      {
+        printf("\nDont u know a year only has 12 months? Choose again:");
+        goto again;
+      }
+      
+      if(choice==1)
+        {
+        printf("%s\n",EngMnth[pos]);
+        }
+      else if(choice==2)
+        {
+          printf("%s\n",NepMnth[pos]);
+        }
+      else
+        (printf("Invalid Input\n"));
+      }
+
+  else{
+        printf("lol the option is just 1 and 2. Choose again:\n");
+        goto start;
+      }
+
+  printf("\nDo u wish to run the program again?");
+  printf("\nType 1 for yes and 2 for no:\n");
+  scanf("%d",&re);
+  
+  if(re==1)
+  goto start;
+
+  if(re!=2)
+  {
+    printf("\nThank you using the program :)");
+  }
+
+  return 0;
+}
